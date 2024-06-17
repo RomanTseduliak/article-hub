@@ -1,0 +1,59 @@
+@import 'src/../../../../../variable.scss';
+
+.container {
+  padding: $padding;
+
+  img {
+    position: absolute;
+    width: $full-width;
+    height: 245px;
+  }
+}
+
+.content-card {
+  font-family: $font-family;
+
+  h2 {
+    font-weight: normal;
+  }
+}
+
+mat-card {
+  position: relative;
+  top: 160px;
+  width: 90%;
+  align-items: center;
+  margin: auto;
+}
+
+mat-card-content {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  line-height: $line-height;
+  padding: $padding;
+}
+
+mat-card-content p {
+  font-size: $font-size-18px;
+  margin-bottom: $margin-bottom;
+  text-align: justify;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-start;
+  padding: $button-padding;
+  font-weight: bold;
+}
+
+button[mat-button] {
+  display: flex;
+  font-size: $font-size-14px;
+  align-items: center;
+}
+
+button[mat-button]::before {
+  content: '←';
+  margin-right: $button-arrow-margin-right;
+}

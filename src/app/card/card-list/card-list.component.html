@@ -1,0 +1,52 @@
+<div class="container">
+  <h1>Filter by keywords</h1>
+  <mat-form-field appearance="outline" [style.width.%]="50">
+    <mat-label>Search Articles</mat-label>
+    <mat-icon matPrefix svgIcon="search"></mat-icon>
+
+    <input
+      matInput
+      (input)="onFilterChange($event)"
+      placeholder="Enter keywords"
+    />
+  </mat-form-field>
+
+  <p>Results: {{ filteredArticlesCount }}</p>
+
+  <div class="articles-container">
+    <mat-card
+      *ngFor="let article of filteredArticles$ | async"
+      class="article-card"
+    >
+      <img mat-card-image [src]="article.image_url" [alt]="article.title" />
+      <mat-card-content>
+        <p class="article-date">
+          <mat-icon matPrefix svgIcon="date"></mat-icon>
+
+          {{ article.published_at | dateSuffix }}
+        </p>
+        <h2
+          mat-card-title
+          class="article-title"
+          [innerHTML]="highlight(article.title, filter$.value)"
+        >
+          {{ article.title }}
+        </h2>
+        <p
+          class="article-summary"
+          [innerHTML]="highlight(article.summary, filter$.value)"
+        >
+          {{ article.summary }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <mat-button
+          mat-button
+          (click)="articleSelected()"
+          [routerLink]="['/article', article.id]"
+          >Read more</mat-button
+        >
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

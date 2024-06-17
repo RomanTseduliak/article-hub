@@ -1,0 +1,87 @@
+@import 'src/../../../../variable.scss';
+
+.container {
+  padding: $padding;
+}
+
+.full-width {
+  width: $full-width;
+  margin-bottom: $margin-bottom;
+}
+
+.articles-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap;
+}
+
+.article-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: $font-family;
+  font-size: $article-title-font-size;
+  font-weight: $article-title-font-weight;
+  height: $article-title-height;
+  line-height: $article-title-line-height;
+  text-align: left;
+}
+
+.article-summary {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: $font-family;
+  font-size: $article-summary-font-size;
+  font-weight: $article-summary-font-weight;
+  line-height: $article-summary-line-height;
+  text-align: left;
+  height: $article-summary-height;
+}
+
+.article-card {
+  width: $article-card-width;
+  max-width: $article-card-max-width;
+  box-shadow: $article-card-shadow;
+  transition: box-shadow 0.3s;
+
+  img {
+    height: 217px;
+  }
+}
+
+.article-card:hover {
+  box-shadow: $article-card-hover-shadow;
+}
+
+.article-date {
+  display: flex;
+  align-self: baseline;
+  font-size: $article-date-font-size;
+  color: $article-date-color;
+  margin-bottom: 10px;
+
+  mat-icon {
+    height: $icon-height-width;
+    width: $icon-height-width;
+    padding-right: $icon-padding-right;
+  }
+}
+
+mat-button {
+  display: flex;
+  font-weight: $button-font-weight;
+  font-family: $font-family;
+  line-height: $button-line-height;
+  text-align: left;
+  cursor: pointer;
+}
+
+mat-button[mat-button]::after {
+  content: '→';
+  margin-left: $button-arrow-margin-left;
+}

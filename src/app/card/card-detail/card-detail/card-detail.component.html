@@ -1,0 +1,16 @@
+<ng-container *ngIf="article$ | async as article">
+  <div class="container">
+    <img mat-card-image [src]="article.image_url" alt="Article image" />
+    <mat-card class="content-card">
+      <mat-card-title>
+        <h2>{{ article.title }}</h2>
+      </mat-card-title>
+      <mat-card-content>
+        <p>{{ article.summary }}</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card-actions>
+      <button mat-button routerLink="/">Back to homepage</button>
+    </mat-card-actions>
+  </div>
+</ng-container>
